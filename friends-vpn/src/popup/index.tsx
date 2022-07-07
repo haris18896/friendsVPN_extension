@@ -1,20 +1,17 @@
-import { useState } from "react"
 
+import { PersistGate } from "@plasmohq/redux-persist/integration/react"
+import { Provider } from "react-redux"
+
+import { persistor, store } from "../../redux/store"
+
+import MyApp from '../pages/_app'
 function IndexPopup() {
-  const [data, setData] = useState("")
-
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        padding: 16
-      }}>
-      <h1>
-        Welcome to your <a href="https://www.plasmo.com">Plasmo</a> Extension!
-      </h1>
-      <input onChange={(e) => setData(e.target.value)} value={data} />
-    </div>
+  return  (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <MyApp />
+      </PersistGate>
+    </Provider>
   )
 }
 
