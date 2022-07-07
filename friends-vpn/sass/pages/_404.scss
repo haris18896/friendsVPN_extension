@@ -1,0 +1,13 @@
+.customError {
+    @include flex-center-center; 
+    height: 576px;
+    
+    strong{
+        color: $black;
+    }
+    p{
+        font-size: 24px;
+        text-align: center;
+        color: $color-grey;
+    }
+}

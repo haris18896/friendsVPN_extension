@@ -1,0 +1,47 @@
+.u-flex{
+    display: flex;
+}
+
+.u-justify-center{
+    justify-content: center
+}
+
+.u-align-center{
+    align-items: center;
+}
+
+.u-align-start{
+    align-items: flex-start;
+}
+
+.u-align-text {
+    text-align: center;
+}
+
+.u-container-1400{
+    max-width: 1400px;
+}
+
+.u-container-1180{
+    max-width: 1180px;
+  
+    // @include breakpoint-down(large){
+    //     padding: 0px 2rem;
+    // }
+}
+
+.u-mx-auto{
+    margin: 0 auto;
+}
+
+.u-justify-between{
+    justify-content: space-between;
+}
+
+.u-flex-1{
+    flex: 1;
+}
+
+.u-text-center{
+    text-align: center;
+}

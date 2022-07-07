@@ -1,0 +1,17 @@
+.form-group{
+    margin: 10px 20px !important;
+    width: 100% !important;
+}
+
+.form-control{
+    &:focus{
+        outline: none !important;
+        box-shadow: none !important;
+        border:1px solid #24275D !important;
+        border-radius: 7px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -o-border-radius: 7px;
+}
+}

@@ -1,0 +1,73 @@
+.Connect{
+    @include flex-container-column;
+    margin: 0px 24px 0px;
+    text-align: center;
+    &__connection{
+        margin: 15px 0px ;
+        p{
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.7;
+            margin: 0;
+        }
+        &--connected{
+            color: $color-green;
+        }
+
+        &--disconnect{
+            color: $color-secondary;
+        }
+
+        img{
+            cursor: pointer;
+        }
+    }
+
+    &__Button{
+        @include flex-container-column;
+        width: 300px;
+
+        img{
+            &:last-child{
+                margin-left: auto;
+            }
+        }
+
+        &--container{
+            @include flex-container-row;
+            border: 1px solid $color-grey;
+            padding: 8px 12px;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 35px;
+            -webkit-border-radius: 35px;
+            -moz-border-radius: 35px;
+            -ms-border-radius: 35px;
+            -o-border-radius: 35px;
+            
+            &__flag{
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+            }
+
+            p{
+                margin: 0 30px 0 10px;
+                font-size: 13px;
+                font-weight: 500;
+            }
+
+        }
+
+        &--ipAddress{
+            width: 100%;
+            margin: 10px 0px 0px;
+            color: $color-secondary;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+}
