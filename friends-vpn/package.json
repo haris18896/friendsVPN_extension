@@ -1,0 +1,31 @@
+{
+  "name": "friends-vpn",
+  "displayName": "Friends VPN",
+  "version": "0.0.1",
+  "description": "FriendsVPN is a free VPN service offered by us. FriendsVPN offers you secure and private internet access. We prioritize your online privacy, security, and freedom above all else. You can use FriendsVPN if you want absolute online privacy and security. FriendsVPN also bypass geo-blocks and other content restrictions.",
+  "author": "Fit-OutFit Software",
+  "packageManager": "npm@8.5.5",
+  "scripts": {
+    "dev": "plasmo dev",
+    "build": "plasmo build"
+  },
+  "dependencies": {
+    "plasmo": "0.45.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "3.2.0",
+    "@types/chrome": "0.0.191",
+    "@types/node": "18.0.1",
+    "@types/react": "18.0.14",
+    "@types/react-dom": "18.0.5",
+    "prettier": "2.7.1",
+    "typescript": "4.7.4"
+  },
+  "manifest": {
+    "host_permissions": [
+      "https://*/*"
+    ]
+  }
+}
