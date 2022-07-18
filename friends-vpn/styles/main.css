@@ -9,7 +9,6 @@
 html, body {
   height: 576px;
   width: 375px;
-  background-color: blue;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Poppins', sans-serif !important;
