@@ -93,12 +93,12 @@ function index() {
     if (connection.status === 'disconnected') {
       setConnection({
         status: 'connected',
-        img: '/assets/logos/connected.svg',
+        img: '/assets/logos/connected.png',
       })
     } else if (connection.status === 'connected') {
       setConnection({
         status: 'disconnected',
-        img: '/assets/logos/disconnected.svg',
+        img: '/assets/logos/disconnected.png',
       })
     }
   }

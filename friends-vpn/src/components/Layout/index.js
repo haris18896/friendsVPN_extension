@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-// import Header from '../Header'
+import Header from '../Header'
 import Footer from '../Footer'
 
 export const siteTitle = 'FriendsVPN Chrome Extension'
@@ -24,7 +24,7 @@ function Layout({ children, title, navbar }) {
         <meta name='og:title' content={siteTitle} />
         <meta name='twitter:card' content='summary_large_image' />
       </Head>
-      {/* {navbar && <Header />} */}
+      {navbar && <Header />}
       {children}
       {navbar && <Footer />}
     </div>

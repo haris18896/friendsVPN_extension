@@ -39,9 +39,9 @@ function index() {
       )}
 
       {isAmp ? (
-        <amp-img width='15' height='20' src='/assets/logos/rightArrow.svg' alt='rightArrow' layout='responsive' />
+        <amp-img width='15' height='20' src='/assets/logos/rightArrow.png' alt='rightArrow' layout='responsive' />
       ) : (
-        <img width='15' height='20' src='/assets/logos/rightArrow.svg' alt='rightArrow' />
+        <img width='15' height='20' src='/assets/logos/rightArrow.png' alt='rightArrow' />
       )}
     </div>
   )

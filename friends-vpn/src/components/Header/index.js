@@ -16,13 +16,17 @@ import { useDispatch, useSelector } from 'react-redux'
 import { handleLogout } from '../../redux/action/Auth/authAction'
 import { clearProfile, handleGetProfile } from '../../redux/action/Auth/profileAction'
 
+import FriendsVPNLogo from 'data-base64:~assets/logos/friendsVPN.png'
+import bars from 'data-base64:~assets/logos/bars.png'
+import person from 'data-base64:~assets/logos/person.png'
+
 NProgress.configure({ showSpinner: false })
 
 export default function Header() {
   const isAmp = useAmp()
   const dispatch = useDispatch()
   const [show, setShow] = useState(false)
-  const [cookie, setCookie] = useCookies(['ExtensionToken'])
+  // const [cookie, setCookie] = useCookies(['ExtensionToken'])
 
   const { success } = useSelector(state => state.auth)
   const { inProcess, profile } = useSelector(state => state.profile)
@@ -50,18 +54,18 @@ export default function Header() {
     }
   }, [])
 
-  useEffect(() => {
-    if (success) {
-      setCookie('ExtensionToken', useJwt.getToken(), {
-        expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 7),
-        path: '/',
-      })
-    } else {
-      setCookie('ExtensionToken', '', {
-        expires: new Date(Date.now() - 1000),
-      })
-    }
-  }, [success])
+  // useEffect(() => {
+  //   if (success) {
+  //     setCookie('ExtensionToken', useJwt.getToken(), {
+  //       expires: new Date(Date.now() + 1000 * 60 * 60 * 24 * 7),
+  //       path: '/',
+  //     })
+  //   } else {
+  //     setCookie('ExtensionToken', '', {
+  //       expires: new Date(Date.now() - 1000),
+  //     })
+  //   }
+  // }, [success])
 
   return (
     <div
@@ -72,32 +76,32 @@ export default function Header() {
       <div onClick={handleShow} className='Header--bars'>
         {' '}
         {isAmp ? (
-          <amp-img width='21' height='20' src='/assets/logos/bars.svg' alt='bars' layout='responsive' />
+          <amp-img width='21' height='20' src={bars} alt='bars' layout='responsive' />
         ) : (
-          <img width='21' height='20' src='/assets/logos/bars.svg' alt='bars' />
+          <img width='21' height='20' src={bars} alt='bars' />
         )}
       </div>
       <div className='Header--logo'>
         <Link href='/?amp=1'>
           <a className='Header--logo'>
             {isAmp ? (
-              <amp-img width='120' height='24' src='/assets/logos/friendsVPN.svg' alt='friendsVPN' layout='responsive' />
+              <amp-img width='120' height='24' src={FriendsVPNLogo} alt='friendsVPN' layout='responsive' />
             ) : (
-              <img width='120' height='24' src='/assets/logos/friendsVPN.svg' alt='friendsVPN' />
+              <img width='120' height='24' src={FriendsVPNLogo} alt='friendsVPN' />
             )}
           </a>
         </Link>
       </div>{' '}
-      <Offcanvas className='Header__offCanvas' show={show} onHide={handleClose}>
+      {/* <Offcanvas className='Header__offCanvas' show={show} onHide={handleClose}>
         <span className='Header__offCanvas--close'>
           <MdCancel size={32} onClick={handleClose} />
         </span>
         <Offcanvas.Body className='Header__Body'>
           <div className='Header__Body--Top'>
             {isAmp ? (
-              <amp-img width='66' height='66' src='/assets/logos/person.svg' alt='person' layout='responsive' />
+              <amp-img width='66' height='66' src={person} alt='person' layout='responsive' />
             ) : (
-              <img width='66' height='66' src='/assets/logos/person.svg' alt='person' />
+              <img width='66' height='66' src={person} alt='person' />
             )}
             <p className='Header__Body--Top__name'>{profile?.name || 'Anonymous'}</p>
             <p className='Header__Body--Top__email'>{profile?.email || 'anonymous@example.com'}</p>
@@ -154,7 +158,7 @@ export default function Header() {
             </ul>
           </div>
         </Offcanvas.Body>
-      </Offcanvas>
+      </Offcanvas> */}
     </div>
   )
 }
