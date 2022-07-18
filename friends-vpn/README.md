@@ -5,7 +5,6 @@ This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with
 First, run the development server:
 
 ```bash
-npm install npm-run-all
 pnpm dev
 # or
 npm run dev

@@ -8,6 +8,7 @@ const apiEndPoints = {
   getVPNServerCountriesEndPoint: `${MAIN_SERVICE_URL}/vpn/vpn/getVPNServerCountries`,
   loginAnonymousCustomerEndPoint: `${MAIN_SERVICE_URL}/vpn/customer/loginAnonymousCustomer`,
   // getIPAddressEndPoint: `https://geolocation-db.com/json/86f5f280-f4eb-11ec-8676-4f4388bc6daa`,
+  
 }
 
 export default apiEndPoints
