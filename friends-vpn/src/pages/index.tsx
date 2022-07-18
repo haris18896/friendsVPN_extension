@@ -5,6 +5,7 @@ function IndexPage() {
 
   return (
     <div
+    className='App'
     style={{
       display: "flex",
       flexDirection: "column",
