@@ -2,7 +2,7 @@
 import React from 'react'
 import { useAmp } from 'next/amp'
 
-import premium from 'data-base64:../../..//assets/logos/premium.png'
+import premium from 'data-base64:../../../assets/logos/premium.png'
 import autoRenewal from 'data-base64:../../../assets/logos/autoRenewal.png'
 import clock from 'data-base64:../../../assets/logos/clock.png'
 import shield from 'data-base64:../../../assets/logos/shield.png'
