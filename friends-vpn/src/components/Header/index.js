@@ -92,7 +92,7 @@ export default function Header() {
           </a>
         </Link>
       </div>{' '}
-      {/* <Offcanvas className='Header__offCanvas' show={show} onHide={handleClose}>
+      <Offcanvas className='Header__offCanvas' show={show} onHide={handleClose}>
         <span className='Header__offCanvas--close'>
           <MdCancel size={32} onClick={handleClose} />
         </span>
@@ -158,7 +158,7 @@ export default function Header() {
             </ul>
           </div>
         </Offcanvas.Body>
-      </Offcanvas> */}
+      </Offcanvas>
     </div>
   )
 }

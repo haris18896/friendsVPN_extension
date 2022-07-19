@@ -1,4 +1,5 @@
 import IndexPage from '~pages'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/main.css'
 import { Provider } from "react-redux"
 import { persistor, store } from '~redux/Store'
