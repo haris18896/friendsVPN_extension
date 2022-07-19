@@ -1,11 +1,14 @@
+import dynamic from 'next/dynamic'
 import Layout from '../components/Layout'
 
 function IndexPage() {
+  const Home = dynamic(() => import('../components/Home/index'), { ssr: false })
+
   return (
     <Layout navbar title='FriendsVPN Extension'>
-      <h1>Home Page</h1>
+      <Home />
     </Layout>
-    )
+  )
 }
 
 export default IndexPage

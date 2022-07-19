@@ -12,9 +12,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { handleAnonymousLogin } from '../../redux/action/Auth/anonymousAuthAction'
 
+import disconnectImage from 'data-base64:~/assets/logos/disconnected.png'
+import connectedImage from 'data-base64:~/assets/logos/connected.png'
+
 NProgress.configure({ showSpinner: false })
 
-function index() {
+function Home() {
   const isAmp = useAmp()
   const router = useRouter()
   const dispatch = useDispatch()
@@ -27,7 +30,7 @@ function index() {
 
   const [connection, setConnection] = useLocalStorage('connection', {
     status: 'disconnected',
-    img: '/assets/logos/disconnected.svg',
+    img: disconnectImage,
   })
 
   useEffect(() => {
@@ -59,49 +62,49 @@ function index() {
     }
   }, [inProcess])
 
-  useEffect(() => {
-    'use strict'
-    if (!navigator.serviceWorker || !navigator.serviceWorker.register) {
-      console.log("This browser doesn't support service workers")
-      return
-    }
-
-    navigator.serviceWorker.addEventListener('message', function (event) {
-      console.log('Got reply from service worker: ' + event.data)
-    })
-
-    if (navigator.serviceWorker.controller) {
-      if (ref.current.id === 'setProxy') {
-        navigator.serviceWorker.controller.postMessage('setProxy')
-      } else if (ref.current.id === 'unsetProxy') {
-        navigator.serviceWorker.controller.postMessage('unsetProxy')
-      }
-    } else {
-      navigator.serviceWorker
-        .register('/backgroundScript.js')
-        .then(function (registration) {
-          console.log('Service worker registered, scope: ' + registration.scope)
-          router.reload()
-        })
-        .catch(function (error) {
-          console.log('Service worker registration failed: ' + error.message)
-        })
-    }
-  }, [ref?.current?.id])
-
   const handleChange = () => {
     if (connection.status === 'disconnected') {
       setConnection({
         status: 'connected',
-        img: '/assets/logos/connected.png',
+        img: disconnectImage,
       })
     } else if (connection.status === 'connected') {
       setConnection({
         status: 'disconnected',
-        img: '/assets/logos/disconnected.png',
+        img: connectedImage,
       })
     }
   }
+
+  // useEffect(() => {
+  //   'use strict'
+  //   if (!navigator.serviceWorker || !navigator.serviceWorker.register) {
+  //     console.log("This browser doesn't support service workers")
+  //     return
+  //   }
+
+  //   navigator.serviceWorker.addEventListener('message', function (event) {
+  //     console.log('Got reply from service worker: ' + event.data)
+  //   })
+
+  //   if (navigator.serviceWorker.controller) {
+  //     if (ref.current.id === 'setProxy') {
+  //       navigator.serviceWorker.controller.postMessage('setProxy')
+  //     } else if (ref.current.id === 'unsetProxy') {
+  //       navigator.serviceWorker.controller.postMessage('unsetProxy')
+  //     }
+  //   } else {
+  //     navigator.serviceWorker
+  //       .register('/backgroundScript.js')
+  //       .then(function (registration) {
+  //         console.log('Service worker registered, scope: ' + registration.scope)
+  //         router.reload()
+  //       })
+  //       .catch(function (error) {
+  //         console.log('Service worker registration failed: ' + error.message)
+  //       })
+  //   }
+  // }, [ref?.current?.id])
 
   return (
     <>
@@ -157,4 +160,4 @@ function index() {
   )
 }
 
-export default index
+export default Home

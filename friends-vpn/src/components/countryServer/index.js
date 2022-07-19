@@ -5,6 +5,7 @@ import { useAmp } from 'next/amp'
 import ReactCountryFlag from 'react-country-flag'
 import { useRouter } from 'next/router'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
+import rightArrow from 'data-base64:~/assets/logos/rightArrow.png'
 
 function index() {
   const isAmp = useAmp()
@@ -39,9 +40,9 @@ function index() {
       )}
 
       {isAmp ? (
-        <amp-img width='15' height='20' src='/assets/logos/rightArrow.png' alt='rightArrow' layout='responsive' />
+        <amp-img width='15' height='20' src={rightArrow} alt='rightArrow' layout='responsive' />
       ) : (
-        <img width='15' height='20' src='/assets/logos/rightArrow.png' alt='rightArrow' />
+        <img width='15' height='20' src={rightArrow} alt='rightArrow' />
       )}
     </div>
   )
