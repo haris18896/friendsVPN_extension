@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import {Suspense, useEffect} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/main.css'
 
@@ -9,6 +9,7 @@ import { Provider } from "react-redux"
 import { persistor, store } from '~redux/Store'
 import { MemoryRouter } from "react-router-dom"
 import { PersistGate } from "@plasmohq/redux-persist/integration/react"
+import { Spinner } from 'reactstrap'
 
 
 function IndexPopup() {
@@ -22,13 +23,17 @@ function IndexPopup() {
       })
   }, [])
 
-  
-
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <MemoryRouter>
-          <Routing />
+          <Suspense fallback={
+          <div className='Spinner'>
+            <Spinner style={{ margin: '210px 0px' }} />
+          </div>
+        }>
+            <Routing />
+          </Suspense>
         </MemoryRouter>
       </PersistGate>
     </Provider>

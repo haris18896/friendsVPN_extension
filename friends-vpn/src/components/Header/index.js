@@ -17,9 +17,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { handleLogout } from '../../redux/action/Auth/authAction'
 import { clearProfile, handleGetProfile } from '../../redux/action/Auth/profileAction'
 
-import FriendsVPNLogo from 'data-base64:~assets/logos/friendsVPN.png'
-import bars from 'data-base64:~assets/logos/bars.png'
-import person from 'data-base64:~assets/logos/person.png'
+import FriendsVPNLogo from 'data-base64:../../../assets/logos/friendsVPN.png'
+import bars from 'data-base64:../../../assets/logos/bars.png'
+import person from 'data-base64:../../../assets/logos/person.png'
 
 NProgress.configure({ showSpinner: false })
 

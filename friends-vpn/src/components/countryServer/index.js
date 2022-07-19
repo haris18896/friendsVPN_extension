@@ -5,7 +5,7 @@ import { useAmp } from 'next/amp'
 import { useNavigate } from 'react-router-dom'
 import ReactCountryFlag from 'react-country-flag'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
-import rightArrow from 'data-base64:~/assets/logos/rightArrow.png'
+import rightArrow from 'data-base-64:../../../assets/logos/rightArrow.png'
 
 function index() {
   const isAmp = useAmp()

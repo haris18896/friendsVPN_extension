@@ -11,8 +11,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { handleAnonymousLogin } from '../../redux/action/Auth/anonymousAuthAction'
 
-import connectedImage from 'data-base64:~/assets/logos/disconnected.png'
-import disconnectImage from 'data-base64:~/assets/logos/connected.png'
+import disconnectImage from 'data-base64:../../../assets/logos/disconnected.png'
+import connectedImage from 'data-base64:../../../assets/logos/connected.png'
 
 NProgress.configure({ showSpinner: false })
 
@@ -65,12 +65,12 @@ function Home() {
     if (connection.status === 'disconnected') {
       setConnection({
         status: 'connected',
-        img: disconnectImage,
+        img: connectedImage,
       })
     } else if (connection.status === 'connected') {
       setConnection({
         status: 'disconnected',
-        img: connectedImage,
+        img: disconnectImage,
       })
     }
   }

@@ -1,20 +1,18 @@
 {
   "name": "friends-vpn",
   "displayName": "Friends VPN",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "description": "FriendsVPN is a free VPN service offered by us. FriendsVPN offers you secure and private internet access. We prioritize your online privacy, security, and freedom above all else. You can use FriendsVPN if you want absolute online privacy and security. FriendsVPN also bypass geo-blocks and other content restrictions.",
   "author": "Fit-OutFit Software Technologies",
   "packageManager": "pnpm@7.1.9",
   "scripts": {
     "start": "next start",
     "dev": "run-p dev:*",
-    "dev:plasmo": "plasmo dev --target=chrome-mv3",
+    "dev:plasmo": "plasmo dev",
     "dev:next": "next dev --port 1947",
-    "dev:firefox": "plasmo dev --target=firefox-mv2",
     "build": "run-p build:*",
-    "build:plasmo": "plasmo build --target=chrome-mv3",
+    "build:plasmo": "plasmo build",
     "build:next": "next build",
-    "build:firefox": "plasmo build --target=firefox-mv2",
     "git": "git add * && git commit -m",
     "postgit": "git push --all"
   },
@@ -68,6 +66,18 @@
     "typescript": "4.7.4"
   },
   "manifest": {
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "~raw.js",
+          "assets/logos/*.png",
+          "resources/test.json"
+        ],
+        "matches": [
+          "https://www.plasmo.com/*"
+        ]
+      }
+    ],
     "host_permissions": [
       "https://*/*"
     ],

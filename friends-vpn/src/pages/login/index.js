@@ -8,7 +8,7 @@ import Layout from '../../components/Layout'
 import * as Yup from 'yup'
 import NProgress from 'nprogress'
 import classNames from 'classnames'
-import MainLogo from 'data-base64:~assets/logos/MainLogo.png'
+import MainLogo from 'data-base64:../../../assets/logos/MainLogo.png'
 
 import { useFormik } from 'formik'
 import { Eye, EyeOff } from 'react-feather'
