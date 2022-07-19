@@ -8,11 +8,13 @@
   "scripts": {
     "start": "next start",
     "dev": "run-p dev:*",
-    "dev:plasmo": "plasmo dev",
+    "dev:plasmo": "plasmo dev --target=chrome-mv3",
     "dev:next": "next dev --port 1947",
+    "dev:firefox": "plasmo dev --target=firefox-mv2",
     "build": "run-p build:*",
-    "build:plasmo": "plasmo build",
+    "build:plasmo": "plasmo build --target=chrome-mv3",
     "build:next": "next build",
+    "build:firefox": "plasmo build --target=firefox-mv2",
     "git": "git add * && git commit -m",
     "postgit": "git push --all"
   },

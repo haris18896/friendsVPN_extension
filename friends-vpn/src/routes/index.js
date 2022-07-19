@@ -11,7 +11,6 @@ NProgress.configure({ showSpinner: false })
 
 export const Routing = () => {
   React.useState(NProgress.start())
-
   React.useEffect(() => {
     NProgress.done()
     return () => NProgress.start()
