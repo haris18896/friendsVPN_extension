@@ -95,36 +95,38 @@ export default function Login() {
           <div className='Login__formContainer'>
             <form onSubmit={formik.handleSubmit}>
               <InputGroup>
-                <FormGroup floating className='form-group'>
+                <FormGroup className='form-group'>
+                  <Label for='Email'>Email</Label>
                   <Input
+                    style={{ paddingTop: '15px', paddingBottom: '15px' }}
                     autoFocus
                     id='Email'
                     name='email'
-                    placeholder='Email'
+                    placeholder='example@gmail.com'
                     type='email'
                     {...formik.getFieldProps('email')}
                     className={classNames({
                       'is-invalid': formik.touched.email && formik.errors.email,
                     })}
                   />
-                  <Label for='Email'>Email</Label>
                   {formik.touched.email && formik.errors.email ? <FormFeedback>{formik.errors.email}</FormFeedback> : null}
                 </FormGroup>
               </InputGroup>
 
               <InputGroup className='inputGroup-Password'>
-                <FormGroup floating className='form-group'>
+                <FormGroup className='form-group'>
+                  <Label for='Password'>Password</Label>
                   <Input
+                    style={{ paddingTop: '15px', paddingBottom: '15px' }}
                     id='Password'
                     name='password'
-                    placeholder='Password'
+                    placeholder='***********'
                     type={visible ? 'text' : 'password'}
                     {...formik.getFieldProps('password')}
                     className={classNames({
                       'is-invalid': formik.touched.password && formik.errors.password,
                     })}
                   />
-                  <Label for='Password'>Password</Label>
                   {formik.touched.password && formik.errors.password ? (
                     <FormFeedback>{formik.errors.password}</FormFeedback>
                   ) : null}
