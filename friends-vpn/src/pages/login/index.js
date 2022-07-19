@@ -2,13 +2,13 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Router, { useRouter } from 'next/router'
 import { useAmp } from 'next/amp'
 import Layout from '../../components/Layout'
 
 import * as Yup from 'yup'
 import NProgress from 'nprogress'
 import classNames from 'classnames'
+import MainLogo from 'data-base64:~assets/logos/MainLogo.png'
 
 import { useFormik } from 'formik'
 import { Eye, EyeOff } from 'react-feather'
@@ -17,12 +17,13 @@ import { HiOutlineArrowNarrowLeft } from 'react-icons/hi'
 import { handleLogin } from '../../redux/action/Auth/authAction'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, FormFeedback, FormGroup, Input, InputGroup, InputGroupText, Label } from 'reactstrap'
+import { useNavigate } from 'react-router-dom'
 
 NProgress.configure({ showSpinner: false })
 
 export default function Login() {
   const isAmp = useAmp()
-  const router = useRouter()
+  const navigation = useNavigate()
 
   const dispatch = useDispatch()
   const { inProcess, success, error } = useSelector(state => state.auth)
@@ -62,7 +63,7 @@ export default function Login() {
 
   useEffect(() => {
     if (success) {
-      Router.push('/?amp=1')
+      navigation('/?amp=1')
     }
   }, [success])
 
@@ -78,12 +79,17 @@ export default function Login() {
     <Layout title='Login'>
       <div className='App'>
         <div className='Login'>
-          <HiOutlineArrowNarrowLeft className='Login__backArrow' color='secondary' size={24} onClick={() => router.back()} />
+          <HiOutlineArrowNarrowLeft
+            className='Login__backArrow'
+            color='secondary'
+            size={24}
+            onClick={() => navigation('/?amp=1')}
+          />
           <div className='Login__Img_container'>
             {isAmp ? (
-              <amp-img width='163' height='130' src='/assets/logos/MainLogo.svg' alt='Friends VPN' layout='responsive' />
+              <amp-img width='163' height='130' src={MainLogo} alt='Friends VPN' layout='responsive' />
             ) : (
-              <img width='163' height='130' src='/assets/logos/MainLogo.svg' alt='Friends VPN' />
+              <img width='163' height='130' src={MainLogo} alt='Friends VPN' />
             )}
           </div>
           <div className='Login__formContainer'>

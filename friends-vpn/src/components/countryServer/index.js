@@ -2,17 +2,15 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React, { useEffect } from 'react'
 import { useAmp } from 'next/amp'
+import { useNavigate } from 'react-router-dom'
 import ReactCountryFlag from 'react-country-flag'
-import { useRouter } from 'next/router'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 import rightArrow from 'data-base64:~/assets/logos/rightArrow.png'
 
 function index() {
   const isAmp = useAmp()
-  const router = useRouter()
+  const navigation = useNavigate()
   const [selectedServer, setSelectedServer] = useLocalStorage('selectedServer', {})
-
-  console.log('router check', router)
 
   useEffect(() => {
     if (localStorage.getItem('selectedServer')) {
@@ -21,7 +19,7 @@ function index() {
   }, [])
 
   return (
-    <div className='Connect__Button--container' onClick={() => router.push('/servers?amp=1')}>
+    <div className='Connect__Button--container' onClick={() => navigation('/servers?amp=1')}>
       {selectedServer && (
         <>
           <ReactCountryFlag

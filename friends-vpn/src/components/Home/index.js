@@ -7,7 +7,6 @@ import dynamic from 'next/dynamic'
 import classNames from 'classnames'
 
 import { useAmp } from 'next/amp'
-import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { handleAnonymousLogin } from '../../redux/action/Auth/anonymousAuthAction'
@@ -19,7 +18,6 @@ NProgress.configure({ showSpinner: false })
 
 function Home() {
   const isAmp = useAmp()
-  const router = useRouter()
   const dispatch = useDispatch()
   const ref = useRef(document.getElementById('setProxy'))
   const { inProcess } = useSelector(state => state.anonymous)

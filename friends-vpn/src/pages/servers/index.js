@@ -7,7 +7,6 @@ import ServersList from '../../components/servers/ServersList'
 import { handleCountriesList } from '../../redux/action/servers'
 
 import { FaStar } from 'react-icons/fa'
-import { useRouter } from 'next/router'
 import { FaSearch } from 'react-icons/fa'
 import { MdCancel } from 'react-icons/md'
 import { FaRegStar } from 'react-icons/fa'
@@ -15,9 +14,10 @@ import { Input, Spinner } from 'reactstrap'
 import { useDispatch, useSelector } from 'react-redux'
 import { HiOutlineArrowNarrowLeft } from 'react-icons/hi'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
+import { useNavigate } from 'react-router-dom'
 
 function Servers() {
-  const router = useRouter()
+  const navigation = useNavigate()
 
   const dispatch = useDispatch()
   const { loading, countries, error } = useSelector(state => state.servers)
@@ -91,7 +91,7 @@ function Servers() {
             className='Servers--header__goBack'
             color='secondary'
             size={24}
-            onClick={() => router.back()}
+            onClick={() => navigation('/?amp=1')}
           />
           <div className='Servers--header__search'>
             <FaSearch className='Servers--header__search--searchIcon' size={15} color='gray' />

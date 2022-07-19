@@ -4,6 +4,10 @@
 
     &__backArrow{
         margin: 0px auto 0px 24px;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &__Img_container {

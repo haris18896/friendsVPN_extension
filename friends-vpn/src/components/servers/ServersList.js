@@ -1,19 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useRouter } from 'next/router'
 import ReactCountryFlag from 'react-country-flag'
+import { useNavigate } from 'react-router-dom'
 
 function ServersList({ children, flag, name, ping, access, data }) {
-  const router = useRouter()
-
+  const navigation = useNavigate()
   return (
     <div className='Servers--list__servers'>
       <div
         className='Servers--list__servers--country'
         onClick={() => {
           JSON.stringify(localStorage.setItem('selectedServer', data))
-          router.back()
+          navigation('/?amp=1')
         }}
       >
         <ReactCountryFlag

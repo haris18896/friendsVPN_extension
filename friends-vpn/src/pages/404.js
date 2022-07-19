@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import React from 'react';
+import Link from 'next/link'
+import React from 'react'
 
 function Custom404() {
   return (
@@ -8,7 +8,7 @@ function Custom404() {
         <strong>404</strong> | page not found
       </p>
     </div>
-  );
+  )
 }
 
-export default Custom404;
+export default Custom404

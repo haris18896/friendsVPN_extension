@@ -1,12 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
 import NProgress from 'nprogress'
 import classNames from 'classnames'
 import { useCookies } from 'react-cookie'
 import useJwt from '../../jwt/jwtService'
 
+import Link from 'next/link'
+import { Link as LinkPage } from 'react-router-dom'
 import { useAmp } from 'next/amp'
 import { MdCancel } from 'react-icons/md'
 import { Offcanvas } from 'react-bootstrap'
@@ -127,21 +128,17 @@ export default function Header() {
                   logout()
                 }}
               >
-                <Link href='/?amp=1'>
-                  <a>
-                    <TbLogout size={24} />
-                    <span>Logout</span>
-                  </a>
-                </Link>
+                <LinkPage to='/?amp=1'>
+                  <TbLogout size={24} />
+                  <span>Logout</span>
+                </LinkPage>
               </div>
             ) : (
               <div className='Header__Body--List__logout' onClick={() => handleClose()}>
-                <Link href='/login?amp=1'>
-                  <a>
-                    <TbLogin size={24} />
-                    <span>Login</span>
-                  </a>
-                </Link>
+                <LinkPage to='/login?amp=1'>
+                  <TbLogin size={24} />
+                  <span>Login</span>
+                </LinkPage>
               </div>
             )}
           </div>
