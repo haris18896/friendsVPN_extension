@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import classNames from 'classnames'
 
-import Layout from '../../Layout'
+import Layout from '../../components/Layout'
 import ServersList from '../../components/servers/ServersList'
 import { handleCountriesList } from '../../redux/action/servers'
 

@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Router, { useRouter } from 'next/router'
 import { useAmp } from 'next/amp'
-import Layout from '../../Layout'
+import Layout from '../../components/Layout'
 
 import * as Yup from 'yup'
 import NProgress from 'nprogress'

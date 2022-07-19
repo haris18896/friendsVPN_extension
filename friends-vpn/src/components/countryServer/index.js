@@ -12,6 +12,8 @@ function index() {
   const router = useRouter()
   const [selectedServer, setSelectedServer] = useLocalStorage('selectedServer', {})
 
+  console.log('router check', router)
+
   useEffect(() => {
     if (localStorage.getItem('selectedServer')) {
       setSelectedServer(JSON.parse(localStorage.getItem('selectedServer')))

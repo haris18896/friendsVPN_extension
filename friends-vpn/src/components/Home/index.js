@@ -12,8 +12,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocalStorage } from '../../hooks/useLocalStorage'
 import { handleAnonymousLogin } from '../../redux/action/Auth/anonymousAuthAction'
 
-import disconnectImage from 'data-base64:~/assets/logos/disconnected.png'
-import connectedImage from 'data-base64:~/assets/logos/connected.png'
+import connectedImage from 'data-base64:~/assets/logos/disconnected.png'
+import disconnectImage from 'data-base64:~/assets/logos/connected.png'
 
 NProgress.configure({ showSpinner: false })
 
@@ -26,6 +26,7 @@ function Home() {
 
   const [ip, setIP] = useState(null)
   const [loading, setLoading] = useState(false)
+
   const CountryServer = dynamic(() => import('../countryServer/index'), { ssr: false })
 
   const [connection, setConnection] = useLocalStorage('connection', {
